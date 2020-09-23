@@ -1,13 +1,120 @@
 body {
+  background-color: rgb(236, 231, 233);
+  color: Teal;
+  font-size: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+.container {
+  --columns: 12;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  --width: 0;
+  background-color: rgb(185, 184, 185);
+  border: rgb(58, 56, 57) 2px solid;
+  border-radius: 8px;
+  padding: 16px;
+  flex-basis: calc(var(--width) / var(--columns) * 100%);
+}
+
+.header {
+  --width: 12;
+  height: 8rem;
+}
+
+.content {
+  --width: 8;
+  height: 64rem;
+}
+
+.sidebar {
+  --width: 4;
+}
+.searchbox {
+  display: block;
+  width: 100%;
+  padding: 15px;
+
+  border: none;
+  outline: none;
+  background: none;
+
+  background-color: #eee;
+  border-radius: 8px;
+
+  color: #53565a;
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: 0.4s ease-out;
+}
+
+.searchbox:focus {
+  box-shadow: 0px 0px 8px 3px #4484c4;
+}
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px;
+}
+
+.results .result {
+  width: 100%;
+  min-width: 250px;
+  padding: 5px;
+  display: flex;
+  cursor: pointer;
+}
+
+.results .result img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.results .result:hover h3 {
+  background: #fff;
+  color: #223343;
+}
+
+.left {
+  width: 40%;
+  height: inherit;
+  margin-left: 0;
+  background: white;
+}
+.right {
+  width: 60%;
+  height: inherit;
+  padding: 1em;
+  background: white;
+}
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+  background-color: rgb(214, 216, 216);
+}
+
+.image {
+  width: 100%;
+  height: 130px;
 }
